@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-    <include file="$(find limo_challenges)/launch/limo_four_diff_empty_world.launch"/>
-    
-    <include file="$(find limo_challenges)/launch/obstacle1.launch"/>
-    
-    <include file="$(find limo_challenges)/launch/markers1.launch"/>
-        
-</launch>

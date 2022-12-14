@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+    
+    <arg name="lab" default="1"/>
+    <arg name="world_name" default="$(find limo_challenges)/worlds/labyrinthe$(arg lab).world"/>
+    <arg name="z" default="0.20"/>
+    <arg name="offset_camera" default="true"/>
+    <arg name="robot_type" default="ackermann"/>
+    
+    <arg name="x" default="0.0"  if="$(eval arg('lab') == 1)"/>
+    <arg name="y" default="0.0" if="$(eval arg('lab') == 1)"/>
+    <arg name="yaw" default="1.57" if="$(eval arg('lab') == 1)"/>
+    
+    <arg name="x" default="-4.2" if="$(eval arg('lab') == 2)" />
+    <arg name="y" default="-5" if="$(eval arg('lab') == 2)" />
+    <arg name="yaw" default="1.57" if="$(eval arg('lab') == 2)" />
+
+    <arg name="x" default="-7.0" if="$(eval arg('lab') == 3)" />
+    <arg name="y" default="-6" if="$(eval arg('lab') == 3)" />
+    <arg name="yaw" default="1.57" if="$(eval arg('lab') == 3)" />
+
+    <arg name="x" default="-12.5" if="$(eval arg('lab') == 4)" />
+    <arg name="y" default="3.0" if="$(eval arg('lab') == 4)" />
+    <arg name="yaw" default="-1.57" if="$(eval arg('lab') == 4)" />
+    
+    <arg name="x" default="0.0" if="$(eval arg('lab') == 5)" />
+    <arg name="y" default="0.0" if="$(eval arg('lab') == 5)" />
+    <arg name="yaw" default="1.57" if="$(eval arg('lab') == 5)" />
+    
+    <arg name="x" default="0.0" if="$(eval arg('lab') == 6)" />
+    <arg name="y" default="0.0" if="$(eval arg('lab') == 6)" />
+    <arg name="yaw" default="1.57" if="$(eval arg('lab') == 6)" />    
+
+    
+    <include file="$(find limo_challenges)/launch/limo_empty_world.launch">
+        <arg name="offset_camera" value="$(arg offset_camera)"/>
+        <arg name="robot_type" value="$(arg robot_type)"/>
+        <arg name="world_name" value="$(arg world_name)"/>
+        <arg name="x" value="$(arg x)"/>
+        <arg name="y" value="$(arg y)"/>
+        <arg name="z" value="$(arg z)"/>
+        <arg name="yaw" value="$(arg yaw)"/>        
+    </include>
+    
+</launch>
