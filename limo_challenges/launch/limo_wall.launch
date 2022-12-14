@@ -8,19 +8,18 @@
     
     <arg name="x" default="0.0"  if="$(eval arg('wall') == 1)"/>
     <arg name="y" default="-2.0" if="$(eval arg('wall') == 1)"/>
-
+<arg name="yaw" default="3.14" if="$(eval arg('wall') == 1)"/>/>
     
     <arg name="x" default="7.0" if="$(eval arg('wall') == 2)" />
     <arg name="y" default="-3.0" if="$(eval arg('wall') == 2)" />
+    <arg name="yaw" default="3.14" if="$(eval arg('wall') == 2)"/>/>
     
     <arg name="x" default="-11.0" if="$(eval arg('wall') == 3)" />
     <arg name="y" default="-2.5" if="$(eval arg('wall') == 3)" />
-
+    <arg name="yaw" default="0.0" if="$(eval arg('wall') == 3)" />/>
 
     <arg name="z" default="0.2"/>
-    <arg name="yaw" default="3.14"/>
-
-    
+       
     <include file="$(find limo_challenges)/launch/limo_empty_world.launch">
         <arg name="offset_camera" value="$(arg offset_camera)"/>
         <arg name="robot_type" value="$(arg robot_type)"/>

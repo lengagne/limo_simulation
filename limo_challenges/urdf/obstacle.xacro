@@ -14,13 +14,12 @@
     </inertial>
     <visual>
       <geometry>
-        <box size="${dim} ${dim*0.1} ${dim*0.1}" />
+        <box size="${dim} ${dim*0.1} ${dim*0.15}" />
       </geometry>
     </visual>
-
     <collision>
       <geometry>
-        <box size="${dim} ${dim*0.1} ${dim*0.1}" />
+        <box size="${dim} ${dim*0.1} ${dim*0.15}" />
       </geometry>
     </collision>
 <!-- </xacro:macro>      -->
