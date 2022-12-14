@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-    <include file="$(find limo_challenges)/launch/limo_ackerman_empty_world.launch">
-    </include>
-    
-    
+   
     <param name="marker0" command="$(find xacro)/xacro '$(find limo_challenges)/urdf/marker.xacro' " />
     <node name="urdf_spawner_marker0" pkg="gazebo_ros" type="spawn_model" args="-urdf -model marker0 -x 1.2 -y 0.2 -z 0.2 -param marker0"/>  
     
