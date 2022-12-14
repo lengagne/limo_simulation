@@ -2,30 +2,30 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"> 
     
     <xacro:property name="num_marker" value="0" />
-    <xacro:property name="dim" value="0.3" />
+    <xacro:property name="dim" value="1.0" />
     <xacro:property name="m" value="100" />
     
 <!--  <xacro:macro name="aruco_cube" params="num_marker dim m ">  -->
-<link name="marker">
+<link name="obstacle">
    <inertial>
       <origin xyz="0 0 0" />
       <mass value="${m}" />
       <inertia  ixx="${m*m/12.0}" ixy="0.0"  ixz="0.0"  iyy="${m*m/12.0}"  iyz="0.0"  izz="${m*m/12.0}" />
     </inertial>
     <visual>
-      <geometry>        
-        <mesh filename="package://limo_challenges/urdf/marker${num_marker}/meshes/Marker${num_marker}.dae" scale="${2.0*dim} ${2.0*dim} ${2.0*dim}"/>
+      <geometry>
+        <box size="${dim} ${dim*0.1} ${dim*0.1}" />
       </geometry>
     </visual>
 
     <collision>
       <geometry>
-        <box size="${dim} ${dim*0.1} ${dim*1.2}" />
+        <box size="${dim} ${dim*0.1} ${dim*0.1}" />
       </geometry>
     </collision>
 <!-- </xacro:macro>      -->
 </link>
-    <gazebo reference="marker">
+    <gazebo reference="obstacle">
     <mu1>100.0</mu1>
     <mu2>100.0</mu2>
     <minDepth>0.003</minDepth>  
