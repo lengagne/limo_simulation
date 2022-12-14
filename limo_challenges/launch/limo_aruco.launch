@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
     
-    <arg name="aruco_number" defautl="1"/>
+    <arg name="aruco_number" default="1"/>
     <arg name="offset_camera" default="true"/>
     <arg name="robot_type" default="ackermann"/>
     
