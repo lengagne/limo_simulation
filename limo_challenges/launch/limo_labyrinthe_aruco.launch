@@ -10,6 +10,13 @@
     <arg name="x" default="0.0" />
     <arg name="y" default="0.0" />
     <arg name="yaw" default="1.57" />
+    
+    <node pkg="aruco_ros" type="marker_publisher" name="aruco_marker_publisher">
+		<remap from="/camera_info" to="/limo/color/camera_info" />
+		<remap from="/image" to="/limo/color/image_raw" />
+		<param name="image_is_rectified" value="True"/>
+		<param name="marker_size"        value="0.25"/>
+	</node>	    
 
     <param name="marker0" command="$(find xacro)/xacro '$(find limo_challenges)/urdf/marker.xacro' marker:=0" />
     <node name="urdf_spawner_marker0" pkg="gazebo_ros" type="spawn_model" args="-urdf -model marker0 -x 4 -y 5 -z 0.2  -param marker0"/>  
